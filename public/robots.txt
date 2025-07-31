@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://ranakarupa.netlify.app/sitemap.xml
