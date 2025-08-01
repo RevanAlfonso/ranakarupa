@@ -13,157 +13,516 @@
   <meta property="og:url" content="https://ranakarupa.netlify.app">
   <meta name="google-site-verification" content="Sxjg_zH8uN3eyYrIyv8fVtTlN-k4m1LnBqdH3HwdbX0" />
 
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <!-- AOS Animation -->
-
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Alpine.js -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style/style.css">
 </head>
 
-<body x-data="{ dark: false }" :class="{ 'bg-gray-900 text-white': dark }">
+<body>
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- Navbar -->
-<header class="fixed w-full bg-white shadow z-40">
-  <nav class="flex items-center justify-between max-w-6xl mx-auto px-6 py-4">
-    <div class="font-bold text-xl">Ranaka Rupa</div>
-    <ul class="flex space-x-6">
-      <li><a href="#tentang" class="hover:text-blue-600">Tentang</a></li>
-      <li><a href="#harga" class="hover:text-blue-600">Harga</a></li>
-      <li><a href="#portofolio" class="hover:text-blue-600">Portofolio</a></li>
-      <li><a href="#kontak" class="hover:text-blue-600">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-palette brand-icon"></i>
+        <span>Ranaka Rupa</span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu">
+        <li><a href="#beranda" class="nav-link">Beranda</a></li>
+        <li><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="#layanan" class="nav-link">Layanan</a></li>
+        <li><a href="#harga" class="nav-link">Harga</a></li>
+        <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+      </ul>
 
+      <!-- Mobile Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
-  <section class="h-screen bg-cover bg-center flex items-center justify-center text-center px-6" style="background-image: url('img/hero.jpg');">
-    <div class="bg-black bg-opacity-60 p-8 rounded-xl text-white max-w-2xl">
-      <h1 class="text-4xl font-bold mb-4">Ranaka Rupa Studio</h1>
-      <p class="text-lg mb-6">Bangun identitas digitalmu melalui website & desain kreatif yang berkesan</p>
-      <a href="#kontak" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Konsultasi Gratis</a>
+  <section class="hero" id="beranda">
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+        <h1>Wujudkan <span class="gradient-text">Identitas Digital</span> Impianmu</h1>
+        <p>Kami siap membantu bisnis dan brand-mu tampil profesional dengan website & desain kreatif yang memukau</p>
+        <div class="hero-buttons">
+          <a href="#kontak" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            Mulai Konsultasi
+          </a>
+          <a href="#layanan" class="btn btn-outline">
+            <i class="fas fa-play"></i>
+            Lihat Layanan
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+        <div class="floating-card card-1">
+          <i class="fas fa-code"></i>
+          <span>Web Development</span>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-paint-brush"></i>
+          <span>Creative Design</span>
+        </div>
+        <div class="floating-card card-3">
+          <i class="fas fa-mobile-alt"></i>
+          <span>UI/UX Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <a href="#tentang">
+        <i class="fas fa-chevron-down"></i>
+      </a>
     </div>
   </section>
 
   <!-- Tentang Kami -->
-  <section class="py-16 px-6 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Tentang Kami</h2>
-    <p class="max-w-xl mx-auto text-gray-600">Kami adalah studio kreatif yang fokus pada jasa pembuatan website dan desain visual. Kami bantu UMKM, brand lokal, dan individu tampil profesional di dunia digital.</p>
+  <section class="about" id="tentang">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Tentang <span class="highlight">Ranaka Rupa Studio</span></h2>
+        <div class="section-divider"></div>
+        <p>Kami adalah studio kreatif yang baru memulai perjalanan untuk membantu UMKM, brand lokal, dan individu tampil profesional di era digital</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <div class="about-item">
+            <div class="about-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="about-info">
+              <h3>Visi Kami</h3>
+              <p>Menjadi partner terpercaya dalam membangun identitas digital yang kuat dan berkarakter untuk setiap klien</p>
+            </div>
+          </div>
+          
+          <div class="about-item">
+            <div class="about-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="about-info">
+              <h3>Komitmen Kami</h3>
+              <p>Memberikan layanan terbaik dengan harga terjangkau, karena kami percaya setiap brand berhak tampil profesional</p>
+            </div>
+          </div>
+          
+          <div class="about-item">
+            <div class="about-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="about-info">
+              <h3>Semangat Kami</h3>
+              <p>Fresh graduate dengan semangat tinggi dan ide-ide kreatif untuk membantu bisnis Anda berkembang</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-visual" data-aos="fade-left">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">0+</div>
+              <div class="stat-label">Proyek Selesai</div>
+              <div class="stat-note">Siap memulai!</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Support</div>
+              <div class="stat-note">Selalu siap membantu</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Dedikasi</div>
+              <div class="stat-note">Untuk setiap proyek</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Kreativitas</div>
+              <div class="stat-note">Tanpa batas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Layanan -->
-  <section class="py-16 bg-gray-50 px-6 text-center">
-    <h2 class="text-3xl font-semibold mb-10">Layanan Kami</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Website</h3>
-        <p class="text-gray-600">Landing page, company profile, dan toko online dengan desain responsif.</p>
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Layanan <span class="highlight">Terbaik Kami</span></h2>
+        <div class="section-divider"></div>
+        <p>Solusi lengkap untuk kebutuhan digital dan desain bisnis Anda</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Desain Grafis</h3>
-        <p class="text-gray-600">Poster, feed Instagram, banner, dan konten visual lainnya.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Branding Kit</h3>
-        <p class="text-gray-600">Logo, palet warna, dan guideline desain untuk brand-mu.</p>
-      </div>
-    </div>
-  </section>
-  
-  <!--  -->
-  <section class="py-16 px-6 text-center bg-white" id="harga" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-10">Paket Harga</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div class="border rounded-xl p-6 shadow hover:shadow-lg">
-        <h3 class="text-xl font-bold mb-2">Basic</h3>
-        <p class="text-gray-500 mb-4">Cocok untuk personal branding</p>
-        <ul class="text-left text-sm mb-4 list-disc list-inside">
-          <li>1 Halaman Website</li>
-          <li>Desain Responsif</li>
-          <li>Form Kontak</li>
-        </ul>
-        <p class="text-2xl font-bold mb-4">Rp500.000</p>
-        <a href="#kontak" class="bg-black text-white px-4 py-2 rounded">Pesan Sekarang</a>
-      </div>
-      <div class="border rounded-xl p-6 shadow hover:shadow-lg">
-        <h3 class="text-xl font-bold mb-2">Standar</h3>
-        <p class="text-gray-500 mb-4">Untuk UMKM dan bisnis kecil</p>
-        <ul class="text-left text-sm mb-4 list-disc list-inside">
-          <li>3-5 Halaman Website</li>
-          <li>SEO Dasar</li>
-          <li>Kontak + Galeri</li>
-        </ul>
-        <p class="text-2xl font-bold mb-4">Rp1.000.000</p>
-        <a href="#kontak" class="bg-black text-white px-4 py-2 rounded">Pesan Sekarang</a>
-      </div>
-      <div class="border rounded-xl p-6 shadow hover:shadow-lg">
-        <h3 class="text-xl font-bold mb-2">Premium</h3>
-        <p class="text-gray-500 mb-4">Untuk bisnis skala menengah</p>
-        <ul class="text-left text-sm mb-4 list-disc list-inside">
-          <li>Website Lengkap</li>
-          <li>SEO + Google Index</li>
-          <li>Desain & Revisi</li>
-        </ul>
-        <p class="text-2xl font-bold mb-4">Rp2.000.000</p>
-        <a href="#kontak" class="bg-black text-white px-4 py-2 rounded">Pesan Sekarang</a>
+      
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Website Development</h3>
+          <p>Landing page, company profile, dan toko online dengan desain responsif dan modern</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Responsive Design</li>
+            <li><i class="fas fa-check"></i> SEO Friendly</li>
+            <li><i class="fas fa-check"></i> Fast Loading</li>
+            <li><i class="fas fa-check"></i> Mobile Optimized</li>
+          </ul>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Desain Grafis</h3>
+          <p>Poster, feed Instagram, banner, dan konten visual yang eye-catching untuk media sosial</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Social Media Content</li>
+            <li><i class="fas fa-check"></i> Print Design</li>
+            <li><i class="fas fa-check"></i> Digital Marketing</li>
+            <li><i class="fas fa-check"></i> Custom Illustration</li>
+          </ul>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3>Branding Package</h3>
+          <p>Logo, palet warna, typography, dan brand guideline lengkap untuk identitas brand yang kuat</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Logo Design</li>
+            <li><i class="fas fa-check"></i> Color Palette</li>
+            <li><i class="fas fa-check"></i> Brand Guidelines</li>
+            <li><i class="fas fa-check"></i> Business Card</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-  
+
+  <!-- Paket Harga -->
+  <section class="pricing" id="harga">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Paket <span class="highlight">Harga Terjangkau</span></h2>
+        <div class="section-divider"></div>
+        <p>Pilih paket yang sesuai dengan kebutuhan dan budget bisnis Anda</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Starter</h3>
+            <p>Cocok untuk personal branding</p>
+          </div>
+          <div class="pricing-price">
+            <span class="currency">Rp</span>
+            <span class="amount">500</span>
+            <span class="period">K</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 1 Halaman Website</li>
+            <li><i class="fas fa-check"></i> Desain Responsif</li>
+            <li><i class="fas fa-check"></i> Form Kontak</li>
+            <li><i class="fas fa-check"></i> Basic SEO</li>
+            <li><i class="fas fa-check"></i> 1x Revisi</li>
+          </ul>
+          <a href="#kontak" class="btn btn-outline">Pilih Paket</a>
+        </div>
+        
+        <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-badge">Populer</div>
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Business</h3>
+            <p>Untuk UMKM dan bisnis kecil</p>
+          </div>
+          <div class="pricing-price">
+            <span class="currency">Rp</span>
+            <span class="amount">1000</span>
+            <span class="period">K</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 3-5 Halaman Website</li>
+            <li><i class="fas fa-check"></i> Advanced SEO</li>
+            <li><i class="fas fa-check"></i> Contact + Gallery</li>
+            <li><i class="fas fa-check"></i> Google Analytics</li>
+            <li><i class="fas fa-check"></i> 3x Revisi</li>
+          </ul>
+          <a href="#kontak" class="btn btn-primary">Pilih Paket</a>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3>Premium</h3>
+            <p>Untuk bisnis skala menengah</p>
+          </div>
+          <div class="pricing-price">
+            <span class="currency">Rp</span>
+            <span class="amount">2000</span>
+            <span class="period">K</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Website Lengkap</li>
+            <li><i class="fas fa-check"></i> SEO + Google Index</li>
+            <li><i class="fas fa-check"></i> Custom Features</li>
+            <li><i class="fas fa-check"></i> Social Media Integration</li>
+            <li><i class="fas fa-check"></i> Unlimited Revisi</li>
+          </ul>
+          <a href="#kontak" class="btn btn-outline">Pilih Paket</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Portofolio -->
-  <section class="py-16 px-6 text-center" id="portofolio" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-10">Portofolio</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <img src="img/porto1.jpg" alt="Contoh proyek 1" class="rounded-lg shadow" />
-      <img src="img/porto2.jpg" alt="Contoh proyek 2" class="rounded-lg shadow" />
-      <img src="img/porto3.jpg" alt="Contoh proyek 3" class="rounded-lg shadow" />
+  <section class="portfolio" id="portofolio">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Contoh <span class="highlight">Karya Kami</span></h2>
+        <div class="section-divider"></div>
+        <p>Berikut adalah beberapa contoh desain dan konsep yang siap kami kembangkan untuk bisnis Anda</p>
+      </div>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <i class="fas fa-laptop-code"></i>
+              <h4>Website Toko Online</h4>
+              <p>E-commerce modern dengan fitur lengkap</p>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>E-Commerce Website</h3>
+            <p>Contoh desain toko online dengan tampilan modern dan user-friendly</p>
+            <div class="portfolio-tags">
+              <span>Website</span>
+              <span>E-commerce</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <i class="fas fa-paint-brush"></i>
+              <h4>Brand Identity</h4>
+              <p>Logo dan brand guideline lengkap</p>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Branding Package</h3>
+            <p>Konsep brand identity untuk startup teknologi</p>
+            <div class="portfolio-tags">
+              <span>Branding</span>
+              <span>Logo</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>Landing Page</h4>
+              <p>Website company profile responsif</p>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Company Profile</h3>
+            <p>Landing page untuk perusahaan jasa dengan desain profesional</p>
+            <div class="portfolio-tags">
+              <span>Website</span>
+              <span>Corporate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="portfolio-note" data-aos="fade-up">
+        <div class="note-content">
+          <i class="fas fa-info-circle"></i>
+          <p><strong>Coming Soon!</strong> Kami sedang mempersiapkan portofolio pertama kami. Proyek Anda bisa menjadi yang pertama!</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Form Kontak -->
-  <section class="py-16 bg-gray-100 px-6" id="kontak">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-4">Hubungi Kami</h2>
-      <p class="mb-6 text-gray-600">Kirim pesan langsung untuk konsultasi atau pemesanan.</p>
-      <form action="https://formsubmit.co/ranakarupa.contact@gmail.com" method="POST" class="space-y-4">
-        <input type="text" name="nama" required placeholder="Nama" class="w-full p-3 rounded border" />
-        <input type="email" name="email" required placeholder="Email" class="w-full p-3 rounded border" />
-        <textarea name="pesan" rows="4" required placeholder="Pesan" class="w-full p-3 rounded border"></textarea>
-        <button type="submit" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800">Kirim Pesan</button>
-      </form>
+  <section class="contact" id="kontak">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Mari <span class="highlight">Berkolaborasi</span></h2>
+        <div class="section-divider"></div>
+        <p>Hubungi kami untuk konsultasi gratis dan wujudkan ide digital Anda</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>ranakarupa.contact@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p>+62 xxx-xxxx-xxxx</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Response Time</h3>
+              <p>< 24 jam</p>
+            </div>
+          </div>
+          
+          <div class="contact-social">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form" data-aos="fade-left">
+          <form action="https://formsubmit.co/ranakarupa.contact@gmail.com" method="POST" id="contactForm">
+            <div class="form-group">
+              <input type="text" name="nama" required placeholder="Nama Lengkap" class="form-input">
+              <i class="fas fa-user form-icon"></i>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" name="email" required placeholder="Email Address" class="form-input">
+              <i class="fas fa-envelope form-icon"></i>
+            </div>
+            
+            <div class="form-group">
+              <select name="layanan" class="form-input" required>
+                <option value="">Pilih Layanan</option>
+                <option value="website">Website Development</option>
+                <option value="desain">Desain Grafis</option>
+                <option value="branding">Branding Package</option>
+                <option value="konsultasi">Konsultasi</option>
+              </select>
+              <i class="fas fa-chevron-down form-icon"></i>
+            </div>
+            
+            <div class="form-group">
+              <textarea name="pesan" rows="5" required placeholder="Ceritakan tentang proyek Anda..." class="form-input"></textarea>
+              <i class="fas fa-comment form-icon"></i>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i>
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white text-center py-6">
-    <p>&copy; 2025 Ranaka Rupa Studio. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-palette"></i>
+            <span>Ranaka Rupa Studio</span>
+          </div>
+          <p>Membangun identitas digital yang berkesan untuk masa depan bisnis yang cerah.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#harga">Harga</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-envelope"></i> ranakarupa.contact@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +62 xxx-xxxx-xxxx</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ranaka Rupa Studio. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <a href="#" class="fixed bottom-6 right-6 bg-black text-white px-4 py-2 rounded-full shadow hover:bg-gray-800">
-    ↑
-  </a>
-  
-  <script>
-    AOS.init();
-  </script>
-  
-  <!-- Ganti `G-XXXXXXX` dengan ID milikmu -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-</script>
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/js/main.js"></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
 </body>
 </html>

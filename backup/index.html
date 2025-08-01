@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranaka Rupa Studio | Jasa Web & Desain Kreatif</title>
+  <meta name="description" content="Ranaka Rupa Studio menyediakan jasa pembuatan website dan desain kreatif untuk UMKM, brand, dan personal." />
+  <meta name="keywords" content="jasa pembuatan website, desain kreatif, desain logo, branding UMKM, jasa desain murah" />
+  <meta name="author" content="Ranaka Rupa Studio" />
+  <meta property="og:title" content="Ranaka Rupa Studio">
+  <meta property="og:description" content="Bangun identitas digitalmu dengan jasa web & desain dari Ranaka Rupa Studio.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:url" content="https://ranakarupa.netlify.app">
+  <meta name="google-site-verification" content="Sxjg_zH8uN3eyYrIyv8fVtTlN-k4m1LnBqdH3HwdbX0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- AOS Animation -->
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{ dark: false }" :class="{ 'bg-gray-900 text-white': dark }">
+
+<!-- Navbar -->
+<header class="fixed w-full bg-white shadow z-40">
+  <nav class="flex items-center justify-between max-w-6xl mx-auto px-6 py-4">
+    <div class="font-bold text-xl">Ranaka Rupa</div>
+    <ul class="flex space-x-6">
+      <li><a href="#tentang" class="hover:text-blue-600">Tentang</a></li>
+      <li><a href="#harga" class="hover:text-blue-600">Harga</a></li>
+      <li><a href="#portofolio" class="hover:text-blue-600">Portofolio</a></li>
+      <li><a href="#kontak" class="hover:text-blue-600">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="h-screen bg-cover bg-center flex items-center justify-center text-center px-6" style="background-image: url('img/hero.jpg');">
+    <div class="bg-black bg-opacity-60 p-8 rounded-xl text-white max-w-2xl">
+      <h1 class="text-4xl font-bold mb-4">Ranaka Rupa Studio</h1>
+      <p class="text-lg mb-6">Bangun identitas digitalmu melalui website & desain kreatif yang berkesan</p>
+      <a href="#kontak" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Konsultasi Gratis</a>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-4">Tentang Kami</h2>
+    <p class="max-w-xl mx-auto text-gray-600">Kami adalah studio kreatif yang fokus pada jasa pembuatan website dan desain visual. Kami bantu UMKM, brand lokal, dan individu tampil profesional di dunia digital.</p>
+  </section>
+
+  <!-- Layanan -->
+  <section class="py-16 bg-gray-50 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-10">Layanan Kami</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="p-6 bg-white rounded-xl shadow-md">
+        <h3 class="text-xl font-bold mb-2">Website</h3>
+        <p class="text-gray-600">Landing page, company profile, dan toko online dengan desain responsif.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md">
+        <h3 class="text-xl font-bold mb-2">Desain Grafis</h3>
+        <p class="text-gray-600">Poster, feed Instagram, banner, dan konten visual lainnya.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md">
+        <h3 class="text-xl font-bold mb-2">Branding Kit</h3>
+        <p class="text-gray-600">Logo, palet warna, dan guideline desain untuk brand-mu.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!--  -->
+  <section class="py-16 px-6 text-center bg-white" id="harga" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-10">Paket Harga</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="border rounded-xl p-6 shadow hover:shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Basic</h3>
+        <p class="text-gray-500 mb-4">Cocok untuk personal branding</p>
+        <ul class="text-left text-sm mb-4 list-disc list-inside">
+          <li>1 Halaman Website</li>
+          <li>Desain Responsif</li>
+          <li>Form Kontak</li>
+        </ul>
+        <p class="text-2xl font-bold mb-4">Rp500.000</p>
+        <a href="#kontak" class="bg-black text-white px-4 py-2 rounded">Pesan Sekarang</a>
+      </div>
+      <div class="border rounded-xl p-6 shadow hover:shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Standar</h3>
+        <p class="text-gray-500 mb-4">Untuk UMKM dan bisnis kecil</p>
+        <ul class="text-left text-sm mb-4 list-disc list-inside">
+          <li>3-5 Halaman Website</li>
+          <li>SEO Dasar</li>
+          <li>Kontak + Galeri</li>
+        </ul>
+        <p class="text-2xl font-bold mb-4">Rp1.000.000</p>
+        <a href="#kontak" class="bg-black text-white px-4 py-2 rounded">Pesan Sekarang</a>
+      </div>
+      <div class="border rounded-xl p-6 shadow hover:shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Premium</h3>
+        <p class="text-gray-500 mb-4">Untuk bisnis skala menengah</p>
+        <ul class="text-left text-sm mb-4 list-disc list-inside">
+          <li>Website Lengkap</li>
+          <li>SEO + Google Index</li>
+          <li>Desain & Revisi</li>
+        </ul>
+        <p class="text-2xl font-bold mb-4">Rp2.000.000</p>
+        <a href="#kontak" class="bg-black text-white px-4 py-2 rounded">Pesan Sekarang</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Portofolio -->
+  <section class="py-16 px-6 text-center" id="portofolio" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-10">Portofolio</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <img src="img/porto1.jpg" alt="Contoh proyek 1" class="rounded-lg shadow" />
+      <img src="img/porto2.jpg" alt="Contoh proyek 2" class="rounded-lg shadow" />
+      <img src="img/porto3.jpg" alt="Contoh proyek 3" class="rounded-lg shadow" />
+    </div>
+  </section>
+
+  <!-- Form Kontak -->
+  <section class="py-16 bg-gray-100 px-6" id="kontak">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Hubungi Kami</h2>
+      <p class="mb-6 text-gray-600">Kirim pesan langsung untuk konsultasi atau pemesanan.</p>
+      <form action="https://formsubmit.co/ranakarupa.contact@gmail.com" method="POST" class="space-y-4">
+        <input type="text" name="nama" required placeholder="Nama" class="w-full p-3 rounded border" />
+        <input type="email" name="email" required placeholder="Email" class="w-full p-3 rounded border" />
+        <textarea name="pesan" rows="4" required placeholder="Pesan" class="w-full p-3 rounded border"></textarea>
+        <button type="submit" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-6">
+    <p>&copy; 2025 Ranaka Rupa Studio. All rights reserved.</p>
+  </footer>
+
+  <a href="#" class="fixed bottom-6 right-6 bg-black text-white px-4 py-2 rounded-full shadow hover:bg-gray-800">
+    ↑
+  </a>
+  
+  <script>
+    AOS.init();
+  </script>
+  
+  <!-- Ganti `G-XXXXXXX` dengan ID milikmu -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
+</body>
+</html>

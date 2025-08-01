@@ -1,0 +1,30 @@
+# Robots.txt for Ranaka Rupa Studio
+# https://ranakarupa.netlify.app/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow sensitive directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.log$
+Disallow: /temp/
+
+# Sitemap location
+Sitemap: https://ranakarupa.netlify.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
