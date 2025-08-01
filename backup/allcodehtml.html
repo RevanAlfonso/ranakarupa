@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranaka Rupa Studio | Jasa Web & Desain Kreatif</title>
+  <meta name="description" content="Ranaka Rupa Studio menyediakan jasa pembuatan website dan desain kreatif untuk UMKM, brand, dan personal." />
+  <meta name="keywords" content="jasa pembuatan website, desain kreatif, desain logo, branding UMKM, jasa desain murah" />
+  <meta name="author" content="Ranaka Rupa Studio" />
+  <meta property="og:title" content="Ranaka Rupa Studio">
+  <meta property="og:description" content="Bangun identitas digitalmu dengan jasa web & desain dari Ranaka Rupa Studio.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:url" content="https://ranakarupa.netlify.app">
+  <meta name="google-site-verification" content="Sxjg_zH8uN3eyYrIyv8fVtTlN-k4m1LnBqdH3HwdbX0" />
+
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="/style/style.css"> -->
+   <style>
+    /* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Color Variables */
+:root {
+  --primary-color: #B1592B;
+  --primary-dark: #8B4A23;
+  --primary-light: #D4834F;
+  --secondary-color: #2C3E50;
+  --accent-color: #E67E22;
+  --text-dark: #2C3E50;
+  --text-light: #7F8C8D;
+  --white: #FFFFFF;
+  --light-bg: #F8F9FA;
+  --gradient: linear-gradient(135deg, #B1592B 0%, #D4834F 100%);
+  --shadow: 0 10px 30px rgba(177, 89, 43, 0.1);
+  --shadow-hover: 0 15px 40px rgba(177, 89, 43, 0.2);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--gradient);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.brand-icon {
+  font-size: 1.8rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B1592B' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+  height: 400px;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.floating-card span {
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.card-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.card-2 {
+  top: 10%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.card-3 {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.hero-scroll a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* About Section */
+.about {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.about-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--light-bg);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.stat-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Services Section */
+.services {
+  padding: 6rem 0;
+  background: var(--light-bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(177, 89, 43, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.service-card p {
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.service-features i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 6rem 0;
+  background: white;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: white;
+  border: 2px solid rgba(177, 89, 43, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.pricing-card.popular {
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pricing-header {
+  margin-bottom: 2rem;
+}
+
+.pricing-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.currency {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.period {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+.pricing-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-light);
+}
+
+.pricing-features i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 6rem 0;
+  background: var(--light-bg);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio-item {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(177, 89, 43, 0.1);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.portfolio-image {
+  height: 250px;
+  background: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(177, 89, 43, 0.1) 0%, rgba(212, 131, 79, 0.1) 100%);
+}
+
+.portfolio-placeholder i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.portfolio-placeholder h4 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-placeholder p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.portfolio-info {
+  padding: 2rem;
+}
+
+.portfolio-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.portfolio-info p {
+  margin-bottom: 1rem;
+}
+
+.portfolio-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-tags span {
+  background: rgba(177, 89, 43, 0.1);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.portfolio-note {
+  text-align: center;
+}
+
+.note-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.note-content i {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.note-content p {
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/* Contact Section */
+.contact {
+  padding: 6rem 0;
+  background: white;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.contact-details h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.contact-details p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+.contact-social {
+  margin-top: 2rem;
+}
+
+.contact-social h3 {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.contact-form {
+  background: var(--light-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid rgba(177, 89, 43, 0.1);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(177, 89, 43, 0.1);
+}
+
+.form-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  pointer-events: none;
+}
+
+select.form-input {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-logo i {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  line-height: 2;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-contact p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 2;
+  margin: 0;
+}
+
+.footer-contact i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  width: 16px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Scroll to Top */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(100px);
+  opacity: 0;
+  z-index: 1000;
+}
+
+.scroll-top.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero-visual {
+    height: 300px;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid,
+  .pricing-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-header,
+  .about,
+  .services,
+  .pricing,
+  .portfolio,
+  .contact {
+    padding: 4rem 0;
+  }
+}
+   </style>
+</head>
+
+<body>
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-palette brand-icon"></i>
+        <span>Ranaka Rupa</span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu">
+        <li><a href="#beranda" class="nav-link">Beranda</a></li>
+        <li><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="#layanan" class="nav-link">Layanan</a></li>
+        <li><a href="#harga" class="nav-link">Harga</a></li>
+        <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="beranda">
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+        <h1>Wujudkan <span class="gradient-text">Identitas Digital</span> Impianmu</h1>
+        <p>Kami siap membantu bisnis dan brand-mu tampil profesional dengan website & desain kreatif yang memukau</p>
+        <div class="hero-buttons">
+          <a href="#kontak" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            Mulai Konsultasi
+          </a>
+          <a href="#layanan" class="btn btn-outline">
+            <i class="fas fa-play"></i>
+            Lihat Layanan
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+        <div class="floating-card card-1">
+          <i class="fas fa-code"></i>
+          <span>Web Development</span>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-paint-brush"></i>
+          <span>Creative Design</span>
+        </div>
+        <div class="floating-card card-3">
+          <i class="fas fa-mobile-alt"></i>
+          <span>UI/UX Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <a href="#tentang">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section class="about" id="tentang">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Tentang <span class="highlight">Ranaka Rupa Studio</span></h2>
+        <div class="section-divider"></div>
+        <p>Kami adalah studio kreatif yang baru memulai perjalanan untuk membantu UMKM, brand lokal, dan individu tampil profesional di era digital</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <div class="about-item">
+            <div class="about-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="about-info">
+              <h3>Visi Kami</h3>
+              <p>Menjadi partner terpercaya dalam membangun identitas digital yang kuat dan berkarakter untuk setiap klien</p>
+            </div>
+          </div>
+          
+          <div class="about-item">
+            <div class="about-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="about-info">
+              <h3>Komitmen Kami</h3>
+              <p>Memberikan layanan terbaik dengan harga terjangkau, karena kami percaya setiap brand berhak tampil profesional</p>
+            </div>
+          </div>
+          
+          <div class="about-item">
+            <div class="about-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="about-info">
+              <h3>Semangat Kami</h3>
+              <p>Fresh graduate dengan semangat tinggi dan ide-ide kreatif untuk membantu bisnis Anda berkembang</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-visual" data-aos="fade-left">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">0+</div>
+              <div class="stat-label">Proyek Selesai</div>
+              <div class="stat-note">Siap memulai!</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Support</div>
+              <div class="stat-note">Selalu siap membantu</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Dedikasi</div>
+              <div class="stat-note">Untuk setiap proyek</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Kreativitas</div>
+              <div class="stat-note">Tanpa batas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Layanan <span class="highlight">Terbaik Kami</span></h2>
+        <div class="section-divider"></div>
+        <p>Solusi lengkap untuk kebutuhan digital dan desain bisnis Anda</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Website Development</h3>
+          <p>Landing page, company profile, dan toko online dengan desain responsif dan modern</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Responsive Design</li>
+            <li><i class="fas fa-check"></i> SEO Friendly</li>
+            <li><i class="fas fa-check"></i> Fast Loading</li>
+            <li><i class="fas fa-check"></i> Mobile Optimized</li>
+          </ul>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Desain Grafis</h3>
+          <p>Poster, feed Instagram, banner, dan konten visual yang eye-catching untuk media sosial</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Social Media Content</li>
+            <li><i class="fas fa-check"></i> Print Design</li>
+            <li><i class="fas fa-check"></i> Digital Marketing</li>
+            <li><i class="fas fa-check"></i> Custom Illustration</li>
+          </ul>
+        </div>
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3>Branding Package</h3>
+          <p>Logo, palet warna, typography, dan brand guideline lengkap untuk identitas brand yang kuat</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Logo Design</li>
+            <li><i class="fas fa-check"></i> Color Palette</li>
+            <li><i class="fas fa-check"></i> Brand Guidelines</li>
+            <li><i class="fas fa-check"></i> Business Card</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paket Harga -->
+  <section class="pricing" id="harga">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Paket <span class="highlight">Harga Terjangkau</span></h2>
+        <div class="section-divider"></div>
+        <p>Pilih paket yang sesuai dengan kebutuhan dan budget bisnis Anda</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Starter</h3>
+            <p>Cocok untuk personal branding</p>
+          </div>
+          <div class="pricing-price">
+            <span class="currency">Rp</span>
+            <span class="amount">500</span>
+            <span class="period">K</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 1 Halaman Website</li>
+            <li><i class="fas fa-check"></i> Desain Responsif</li>
+            <li><i class="fas fa-check"></i> Form Kontak</li>
+            <li><i class="fas fa-check"></i> Basic SEO</li>
+            <li><i class="fas fa-check"></i> 1x Revisi</li>
+          </ul>
+          <a href="#kontak" class="btn btn-outline">Pilih Paket</a>
+        </div>
+        
+        <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-badge">Populer</div>
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Business</h3>
+            <p>Untuk UMKM dan bisnis kecil</p>
+          </div>
+          <div class="pricing-price">
+            <span class="currency">Rp</span>
+            <span class="amount">1000</span>
+            <span class="period">K</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 3-5 Halaman Website</li>
+            <li><i class="fas fa-check"></i> Advanced SEO</li>
+            <li><i class="fas fa-check"></i> Contact + Gallery</li>
+            <li><i class="fas fa-check"></i> Google Analytics</li>
+            <li><i class="fas fa-check"></i> 3x Revisi</li>
+          </ul>
+          <a href="#kontak" class="btn btn-primary">Pilih Paket</a>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3>Premium</h3>
+            <p>Untuk bisnis skala menengah</p>
+          </div>
+          <div class="pricing-price">
+            <span class="currency">Rp</span>
+            <span class="amount">2000</span>
+            <span class="period">K</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Website Lengkap</li>
+            <li><i class="fas fa-check"></i> SEO + Google Index</li>
+            <li><i class="fas fa-check"></i> Custom Features</li>
+            <li><i class="fas fa-check"></i> Social Media Integration</li>
+            <li><i class="fas fa-check"></i> Unlimited Revisi</li>
+          </ul>
+          <a href="#kontak" class="btn btn-outline">Pilih Paket</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portofolio -->
+  <section class="portfolio" id="portofolio">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Contoh <span class="highlight">Karya Kami</span></h2>
+        <div class="section-divider"></div>
+        <p>Berikut adalah beberapa contoh desain dan konsep yang siap kami kembangkan untuk bisnis Anda</p>
+      </div>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <i class="fas fa-laptop-code"></i>
+              <h4>Website Toko Online</h4>
+              <p>E-commerce modern dengan fitur lengkap</p>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>E-Commerce Website</h3>
+            <p>Contoh desain toko online dengan tampilan modern dan user-friendly</p>
+            <div class="portfolio-tags">
+              <span>Website</span>
+              <span>E-commerce</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <i class="fas fa-paint-brush"></i>
+              <h4>Brand Identity</h4>
+              <p>Logo dan brand guideline lengkap</p>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Branding Package</h3>
+            <p>Konsep brand identity untuk startup teknologi</p>
+            <div class="portfolio-tags">
+              <span>Branding</span>
+              <span>Logo</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>Landing Page</h4>
+              <p>Website company profile responsif</p>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Company Profile</h3>
+            <p>Landing page untuk perusahaan jasa dengan desain profesional</p>
+            <div class="portfolio-tags">
+              <span>Website</span>
+              <span>Corporate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="portfolio-note" data-aos="fade-up">
+        <div class="note-content">
+          <i class="fas fa-info-circle"></i>
+          <p><strong>Coming Soon!</strong> Kami sedang mempersiapkan portofolio pertama kami. Proyek Anda bisa menjadi yang pertama!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Kontak -->
+  <section class="contact" id="kontak">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Mari <span class="highlight">Berkolaborasi</span></h2>
+        <div class="section-divider"></div>
+        <p>Hubungi kami untuk konsultasi gratis dan wujudkan ide digital Anda</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>ranakarupa.contact@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p>+62 xxx-xxxx-xxxx</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Response Time</h3>
+              <p>< 24 jam</p>
+            </div>
+          </div>
+          
+          <div class="contact-social">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form" data-aos="fade-left">
+          <form action="https://formsubmit.co/ranakarupa.contact@gmail.com" method="POST" id="contactForm">
+            <div class="form-group">
+              <input type="text" name="nama" required placeholder="Nama Lengkap" class="form-input">
+              <i class="fas fa-user form-icon"></i>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" name="email" required placeholder="Email Address" class="form-input">
+              <i class="fas fa-envelope form-icon"></i>
+            </div>
+            
+            <div class="form-group">
+              <select name="layanan" class="form-input" required>
+                <option value="">Pilih Layanan</option>
+                <option value="website">Website Development</option>
+                <option value="desain">Desain Grafis</option>
+                <option value="branding">Branding Package</option>
+                <option value="konsultasi">Konsultasi</option>
+              </select>
+              <i class="fas fa-chevron-down form-icon"></i>
+            </div>
+            
+            <div class="form-group">
+              <textarea name="pesan" rows="5" required placeholder="Ceritakan tentang proyek Anda..." class="form-input"></textarea>
+              <i class="fas fa-comment form-icon"></i>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i>
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-palette"></i>
+            <span>Ranaka Rupa Studio</span>
+          </div>
+          <p>Membangun identitas digital yang berkesan untuk masa depan bisnis yang cerah.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#harga">Harga</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-envelope"></i> ranakarupa.contact@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +62 xxx-xxxx-xxxx</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ranaka Rupa Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/js/main.js"></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+
+    // Initialize AOS Animation
+AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+  
+  // DOM Elements
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const contactForm = document.getElementById('contactForm');
+  
+  // Mobile Menu Toggle
+  function toggleMobileMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+  }
+  
+  // Close Mobile Menu
+  function closeMobileMenu() {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  // Event Listeners for Mobile Menu
+  hamburger.addEventListener('click', toggleMobileMenu);
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+  
+  // Close mobile menu when clicking on nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  // Navbar Scroll Effect
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Add/remove scrolled class for styling
+    if (scrollTop > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    
+    // Hide/show navbar on scroll (optional)
+    if (scrollTop > lastScrollTop && scrollTop > 200) {
+      navbar.style.transform = 'translateY(-100%)';
+    } else {
+      navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+  
+  // Scroll to Top Button
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  });
+  
+  scrollTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Smooth Scrolling for Anchor Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Active Navigation Link Highlighting
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.clientHeight;
+      
+      if (window.pageYOffset >= sectionTop && 
+          window.pageYOffset < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', updateActiveNavLink);
+  
+  // Form Submission Handler
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      // Add loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+      submitBtn.disabled = true;
+      
+      // Reset after form submission (you can customize this based on your needs)
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  }
+  
+  // Floating Animation for Hero Cards
+  function animateFloatingCards() {
+    const cards = document.querySelectorAll('.floating-card');
+    
+    cards.forEach((card, index) => {
+      // Add mouse move effect
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px) scale(1.05)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  }
+  
+  // Pricing Card Hover Effects
+  function initPricingCards() {
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    
+    pricingCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        // Slightly reduce scale of other cards
+        pricingCards.forEach(otherCard => {
+          if (otherCard !== card) {
+            otherCard.style.transform = 'scale(0.98)';
+            otherCard.style.opacity = '0.8';
+          }
+        });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        // Reset all cards
+        pricingCards.forEach(otherCard => {
+          otherCard.style.transform = '';
+          otherCard.style.opacity = '';
+        });
+      });
+    });
+  }
+  
+  // Typing Animation for Hero Text
+  function initTypingAnimation() {
+    const heroTitle = document.querySelector('.hero-text h1');
+    if (!heroTitle) return;
+    
+    const text = heroTitle.innerHTML;
+    heroTitle.innerHTML = '';
+    
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        heroTitle.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    
+    // Start typing animation after page load
+    setTimeout(typeWriter, 1000);
+  }
+  
+  // Counter Animation for Stats
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    const animateCounter = (counter) => {
+      const target = counter.textContent;
+      const increment = 1;
+      let current = 0;
+      
+      // Handle different number formats
+      if (target.includes('+')) {
+        const num = parseInt(target.replace('+', ''));
+        const timer = setInterval(() => {
+          current += increment;
+          counter.textContent = current + '+';
+          if (current >= num) {
+            clearInterval(timer);
+            counter.textContent = target;
+          }
+        }, 50);
+      } else if (target === '24/7') {
+        // Keep as is for 24/7
+        return;
+      } else if (target === '100%') {
+        const timer = setInterval(() => {
+          current += 2;
+          counter.textContent = current + '%';
+          if (current >= 100) {
+            clearInterval(timer);
+            counter.textContent = '100%';
+          }
+        }, 30);
+      }
+    };
+    
+    // Intersection Observer for counter animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    
+    counters.forEach(counter => observer.observe(counter));
+  }
+  
+  // Parallax Effect for Hero Section
+  function initParallaxEffect() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      
+      hero.style.transform = `translateY(${rate}px)`;
+    });
+  }
+  
+  // Service Cards Stagger Animation
+  function initServiceCardsAnimation() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 200);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    
+    serviceCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      observer.observe(card);
+    });
+  }
+  
+  // Portfolio Items Hover Effect
+  function initPortfolioHover() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    portfolioItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const placeholder = item.querySelector('.portfolio-placeholder');
+        if (placeholder) {
+          placeholder.style.background = 'linear-gradient(135deg, rgba(177, 89, 43, 0.2) 0%, rgba(212, 131, 79, 0.2) 100%)';
+        }
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        const placeholder = item.querySelector('.portfolio-placeholder');
+        if (placeholder) {
+          placeholder.style.background = 'linear-gradient(135deg, rgba(177, 89, 43, 0.1) 0%, rgba(212, 131, 79, 0.1) 100%)';
+        }
+      });
+    });
+  }
+  
+  // Form Validation
+  function initFormValidation() {
+    const formInputs = document.querySelectorAll('.form-input');
+    
+    formInputs.forEach(input => {
+      input.addEventListener('blur', validateInput);
+      input.addEventListener('input', clearValidation);
+    });
+    
+    function validateInput(e) {
+      const input = e.target;
+      const value = input.value.trim();
+      
+      // Remove existing validation classes
+      input.classList.remove('valid', 'invalid');
+      
+      if (input.hasAttribute('required') && !value) {
+        input.classList.add('invalid');
+        showInputError(input, 'Field ini wajib diisi');
+        return false;
+      }
+      
+      if (input.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          input.classList.add('invalid');
+          showInputError(input, 'Format email tidak valid');
+          return false;
+        }
+      }
+      
+      input.classList.add('valid');
+      clearInputError(input);
+      return true;
+    }
+    
+    function clearValidation(e) {
+      const input = e.target;
+      input.classList.remove('valid', 'invalid');
+      clearInputError(input);
+    }
+    
+    function showInputError(input, message) {
+      clearInputError(input);
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'input-error';
+      errorDiv.textContent = message;
+      input.parentNode.appendChild(errorDiv);
+    }
+    
+    function clearInputError(input) {
+      const existingError = input.parentNode.querySelector('.input-error');
+      if (existingError) {
+        existingError.remove();
+      }
+    }
+  }
+  
+  // Loading Screen
+  function initLoadingScreen() {
+    window.addEventListener('load', () => {
+      const loadingScreen = document.querySelector('.loading-screen');
+      if (loadingScreen) {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }
+    });
+  }
+  
+  // Button Ripple Effect
+  function initButtonRippleEffect() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+  }
+  
+  // Intersection Observer for Animations
+  function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('[data-aos]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach(el => observer.observe(el));
+  }
+  
+  // Theme Switcher (Optional - if you want to add dark mode)
+  function initThemeSwitcher() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (!themeToggle) return;
+    
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  }
+  
+  // Lazy Loading for Images
+  function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+  }
+  
+  // Scroll Progress Indicator
+  function initScrollProgress() {
+    const progressBar = document.querySelector('.scroll-progress');
+    if (!progressBar) return;
+    
+    window.addEventListener('scroll', () => {
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+  }
+  
+  // Performance Optimization - Debounce Function
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+  
+  // Initialize all functions when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Core functionality
+    animateFloatingCards();
+    initPricingCards();
+    animateCounters();
+    initServiceCardsAnimation();
+    initPortfolioHover();
+    initFormValidation();
+    initButtonRippleEffect();
+    initScrollAnimations();
+    initLazyLoading();
+    initScrollProgress();
+    
+    // Optional features
+    // initTypingAnimation(); // Uncomment if you want typing effect
+    // initParallaxEffect(); // Uncomment if you want parallax
+    // initThemeSwitcher(); // Uncomment if you add theme toggle
+    // initLoadingScreen(); // Uncomment if you add loading screen
+    
+    console.log('🎨 Ranaka Rupa Studio - Website loaded successfully!');
+  });
+  
+  // Handle window resize
+  window.addEventListener('resize', debounce(() => {
+    // Close mobile menu on resize
+    if (window.innerWidth > 768) {
+      closeMobileMenu();
+    }
+  }, 250));
+  
+  // Prevent form resubmission on page refresh
+  window.addEventListener('beforeunload', () => {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => form.reset());
+  });
+  
+  // Add custom cursor effect (optional)
+  function initCustomCursor() {
+    const cursor = document.querySelector('.custom-cursor');
+    if (!cursor) return;
+    
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    
+    document.addEventListener('mousedown', () => {
+      cursor.classList.add('active');
+    });
+    
+    document.addEventListener('mouseup', () => {
+      cursor.classList.remove('active');
+    });
+  }
+  
+  // Error handling for external resources
+  window.addEventListener('error', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+    }
+  });
+  
+  // Add CSS for additional features
+  const additionalCSS = `
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .form-input.valid {
+    border-color: #27ae60;
+  }
+  
+  .form-input.invalid {
+    border-color: #e74c3c;
+  }
+  
+  .input-error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+  
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gradient);
+    z-index: 9999;
+    transition: width 0.3s ease;
+  }
+  
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease;
+  }
+  
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+  }
+  
+  .custom-cursor.active {
+    transform: scale(1.5);
+  }
+  
+  @media (max-width: 768px) {
+    .custom-cursor {
+      display: none;
+    }
+  }
+  `;
+  
+  // Inject additional CSS
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = additionalCSS;
+  document.head.appendChild(styleSheet);
+  </script>
+</body>
+</html>
