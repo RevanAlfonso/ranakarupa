@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranaka Rupa - Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B1592B',
+                        'primary-dark': '#9A4B23',
+                        'primary-light': '#D4743F'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-4 group">
+                    <div class="relative">
+                        <img src="/img/favicon.png" alt="Ranaka Rupa Logo" 
+                             class="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary/10 rounded-full scale-0 group-hover:scale-125 transition-transform duration-300"></div>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                        Ranaka Rupa
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#home" class="px-4 py-2 text-gray-700 hover:text-primary font-medium transition-all duration-300 rounded-lg hover:bg-primary/5 relative group">
+                        Home
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-8"></span>
+                    </a>
+                    <a href="#profile" class="px-4 py-2 text-gray-700 hover:text-primary font-medium transition-all duration-300 rounded-lg hover:bg-primary/5 relative group">
+                        Profile
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-8"></span>
+                    </a>
+                    <a href="#services" class="px-4 py-2 text-gray-700 hover:text-primary font-medium transition-all duration-300 rounded-lg hover:bg-primary/5 relative group">
+                        Services
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-8"></span>
+                    </a>
+                    <a href="#portofolio" class="px-4 py-2 text-gray-700 hover:text-primary font-medium transition-all duration-300 rounded-lg hover:bg-primary/5 relative group">
+                        Portofolio
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-8"></span>
+                    </a>
+                    <a href="#kontak" class="ml-4 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5 font-medium">
+                        Kontak
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg focus:outline-none transition-all duration-300">
+                        <svg id="menu-icon" class="h-6 w-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="h-6 w-6 hidden transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-gray-200/50 shadow-lg">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#home" class="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all duration-300 border-l-4 border-transparent hover:border-primary">
+                    Home
+                </a>
+                <a href="#profile" class="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all duration-300 border-l-4 border-transparent hover:border-primary">
+                    Profile
+                </a>
+                <a href="#services" class="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all duration-300 border-l-4 border-transparent hover:border-primary">
+                    Services
+                </a>
+                <a href="#portofolio" class="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all duration-300 border-l-4 border-transparent hover:border-primary">
+                    Portofolio
+                </a>
+                <div class="pt-2">
+                    <a href="#kontak" class="block mx-4 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all duration-300 text-center font-medium shadow-lg hover:shadow-primary/25">
+                        Kontak
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        // Mobile menu toggle with icon animation
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-xl');
+                navbar.classList.add('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
